@@ -1,3 +1,0 @@
-E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/CMakeFiles/Introduction_to_Algorithm_CLRS_Code.dir
-E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/CMakeFiles/rebuild_cache.dir
