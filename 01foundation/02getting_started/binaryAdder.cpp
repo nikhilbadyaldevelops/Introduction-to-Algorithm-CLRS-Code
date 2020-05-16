@@ -18,12 +18,6 @@ vector<int> sum_(vector<int>& a , vector<int> & b){
 
 int main()
 {
-    // int arr1[5]  = {1,0,0,1,0};   //  1 0 1 1  0
-    // int arr2[5] =  {0,1,0,1,1};
-    // int arr3[6];
-    // sum(a,5,arr2,arr3);
-    // for(auto i : arr3)
-    //     cout<<i<<" ";
     vector<int>a  {1,0,0,1,0};
     vector<int>b {0,1,0,1,1};
     auto c = sum_(a,b);
@@ -32,6 +26,16 @@ int main()
     }
     return 0;
 }
+
+
+
+//Some inputs to check code.
+// int arr1[5]  = {1,0,0,1,0};   //  1 0 1 1  0
+// int arr2[5] =  {0,1,0,1,1};
+// int arr3[6];
+// sum(a,5,arr2,arr3);
+// for(auto i : arr3)
+//     cout<<i<<" ";
 
 // C approach
 void sum(int *arr1 , int size1 ,int *arr2 ,int *arr3 )

@@ -33,7 +33,6 @@ bool recursive_binary_search(vector<int>&nums ,int low, int high,int key){
 }
 int main(){
     vector<int> nums{34,56,78,99,134,157,194,457,746,946};
-    //cout<<binary_search(nums,7446);
     cout<<recursive_binary_search(nums,0,nums.size()-1 , 946);
     cout<<"\n Working.";
     return 0;

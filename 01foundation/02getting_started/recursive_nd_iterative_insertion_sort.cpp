@@ -27,7 +27,10 @@ void recursive_insertion_sort(vector<int>& nums, int size){
     nums[j+1] = key;
 }
 int main(){
-    vector<int> nums {-3,16,12,39,-45,45,65,79,84,98,-23};
+    vector<int> nums;
+    for(int i = 1 ; i <= 20 ; ++i){
+        nums.push_back(rand() % 74576);
+    }
     recursive_insertion_sort(nums,nums.size()-1);
     for(int x : nums){
         cout<<x<<" ";

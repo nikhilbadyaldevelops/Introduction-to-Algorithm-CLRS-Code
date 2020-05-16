@@ -80,18 +80,7 @@ void build_max_heap(vector<int>& nums){
     }
 }
 int main(){
-    //cout<<left(3);
-    //cout<<right(3);
-    //cout<<parent(5);
-
-    // vector<int>vec;
-    // for(int i = 0 ; i < 10 ; ++i){
-    //     vec.push_back();
-    // }
-    //vector<int> vec{16,4,10,14,7,9,3,2,8,1};
     vector<int> vec{27,17,3,16,13,10,1,5,7,12,4,8,9,0};
-    //heap_sort(vec,1);
-    //max_heapify(vec,2);
     max_heapify_iterative(vec,2);
     for(int x : vec){
         cout<<x<<"  ";
@@ -99,3 +88,15 @@ int main(){
     cout<<"\nWorkign";
     return 0;
 }
+//Some more functions to check code.
+//heap_sort(vec,1);
+//max_heapify(vec,2);
+//cout<<left(3);
+//cout<<right(3);
+//cout<<parent(5);
+
+// vector<int>vec;
+// for(int i = 0 ; i < 10 ; ++i){
+//     vec.push_back();
+// }
+//vector<int> vec{16,4,10,14,7,9,3,2,8,1};

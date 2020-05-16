@@ -22,10 +22,7 @@ tuple<int,int,int> max_subarray(vector<int>&nums){
     return make_tuple(max_sum,low,high);
 }
 
-
-
 //or
-
 
 tuple<int,int,int> max_subarray__(vector<int>&nums){
     int left = 0 ;
@@ -52,7 +49,11 @@ int main(){
 
     vector<int>nums{13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
     auto t1 = std::chrono::high_resolution_clock::now();
-    auto max_subarray_ = max_subarray__(nums);
+
+
+    auto max_subarray_ = max_subarray__(nums); //Main call
+
+
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
     std::cout << duration<<" is the time taken.\n";

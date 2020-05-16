@@ -50,6 +50,8 @@ void merge_sort(vector<int>&nums ,int low, int high){
 }
 
 //We can make it efficient by using heap sort instead of merge sort to avoid auxillary arrays.
+
+//#Solution 1
 bool sum_check(vector<int>&nums, int sum){
     merge_sort(nums,0,nums.size()-1);
     int complement ;
@@ -65,6 +67,9 @@ bool sum_check(vector<int>&nums, int sum){
 }
 
 //OR
+
+//#Solution 2
+
 
 bool sum_check_(vector<int>&nums,int sum){
     merge_sort(nums,0,nums.size()-1);
@@ -83,6 +88,8 @@ bool sum_check_(vector<int>&nums,int sum){
 }
 
 // Another solution. Though this is O(n)
+
+//#Solution 3
 bool sum_check__(vector<int> & nums , int sum){
     unordered_set<int> set;
     for(int x : nums ){
@@ -94,8 +101,14 @@ bool sum_check__(vector<int> & nums , int sum){
     return false;
 }
 int main(){
-    vector<int> nums{3,23,36,324,456,25,-67,25,22,23,-3};
-    cout<<sum_check__(nums,-70);
+    vector<int> nums;
+    for(int i = 1 ; i <= 20 ; ++i){
+        nums.push_back(rand() % 74576);
+    }
+    cout<<sum_check_(nums,-70);
+    for(int x : nums){
+        cout<<x<<" ";
+    }
     cout<<"\nWorking.";
     return 0;
 }

@@ -17,7 +17,10 @@ void selection_sort(vector<int>& nums ){
 }
 
 int main(){
-    vector<int> nums{-346,3,66,23,-5,22,-34,57,225,-44};
+    vector<int> nums;
+    for(int i = 1 ; i <= 20 ; ++i){
+        nums.push_back(rand() % 74576);
+    }
     selection_sort(nums);
     for(int x : nums){
         cout<<x<<" ";

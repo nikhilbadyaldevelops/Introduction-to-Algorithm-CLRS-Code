@@ -12,7 +12,10 @@ int linear_search(vector<int>& nums, int key){
     return ret;
 }
 int main(){
-    vector<int> nums{3,23,36,324,456,25,-67,25,22,23,-3};
+    vector<int>nums;
+    for(int i = 1 ; i <= 20 ; ++i){
+        nums.push_back(rand() % 74576);
+    }
     cout<<linear_search(nums,22);
     cout<<"\nWorking.";
     return 0;

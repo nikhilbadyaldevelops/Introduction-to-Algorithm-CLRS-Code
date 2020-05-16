@@ -12,8 +12,6 @@ int merge(vector<int>&nums , int low , int mid , int high){
     for(int i = 0 ; i <size2 ; ++i){
         right.push_back(nums[mid+i+1]);
     }
-    left.push_back(INT_MAX);
-    right.push_back(INT_MAX);
     int i = 0 ;
     int j = 0;
     int start  = low;
@@ -24,6 +22,7 @@ int merge(vector<int>&nums , int low , int mid , int high){
             start++;
             i++;
         }else{
+            // To print position of inverted elements.
             for(int l = i ; l < size1; ++l){
                 cout<<"("<<left[l]<<","<<right[j]<<")"<<endl;
             }
@@ -33,6 +32,7 @@ int merge(vector<int>&nums , int low , int mid , int high){
             j++;
         }
     }
+
     if(i == size1){
         for(int c = j ; c< size2 ; ++c){
             nums[start] = right[c];
@@ -58,8 +58,17 @@ int inversion_count(vector<int>& nums , int low , int high){
     return 0 ;
 }
 int main(){
-    vector<int>nums{3,2,1};//{8,4,2,1};//{1, 20, 6, 4, 5 };// {69,45,23,6,22,88,-33,-145,457,688,566};
-    cout<<inversion_count(nums,0,nums.size()-1);
+    vector<int>nums;
+    for(int i = 1 ; i <= 20 ; ++i){
+        nums.push_back(rand() % 74576);
+    }
+    cout<<"Total no. of counts :-"<<inversion_count(nums,0,nums.size()-1)<<endl;
+    for(int x : nums){
+        cout<<x<<" ";
+    }
     cout<<"\nWorking.";
     return 0 ;
 }
+
+// Some extra inputs to check code.
+//vector<int>nums{3,2,1};//{8,4,2,1};//{1, 20, 6, 4, 5 };// {69,45,23,6,22,88,-33,-145,457,688,566};

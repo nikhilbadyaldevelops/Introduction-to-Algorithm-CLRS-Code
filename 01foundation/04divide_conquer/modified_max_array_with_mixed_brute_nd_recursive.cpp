@@ -67,8 +67,11 @@ int main(){
     vector<int>nums{13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
     int size = nums.size()-1;
     auto t1 = std::chrono::high_resolution_clock::now();
-    //auto max_subarray = modified_brute_force(nums,0,size);
+
+
     auto max_subarray = modified_max_sub_array(nums,0,nums.size()-1,size);
+
+    
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
     std::cout << duration<<" is the time taken.\n";
