@@ -27,7 +27,7 @@ private:
             }
         }
     }
-    void iterative_insert(Node *root , Node * new_){
+    /*void iterative_insert(Node *root , Node * new_){
         Node *prev = nil;
         while(root != nil){
             prev = root;
@@ -47,8 +47,8 @@ private:
         }
         new_->right = nil;
         new_->left =  nil;
-    }
-    Node * create_node(int info,Node * parent_node){
+    }*/
+    static Node * create_node(int info,Node * parent_node){
         Node * new_node = new Node;
         new_node->info = info;
         new_node->left = nullptr;
@@ -63,7 +63,7 @@ private:
             print_(node->right);
         }
     }
-    void in_order_walk_(Node * node){
+    static void in_order_walk_(Node * node){
         stack<Node*> node_stack;
         while(node != nullptr || !node_stack.empty()){
             while(node != nullptr){
@@ -113,7 +113,7 @@ private:
             return search_(node->right,value);
         }
     }
-    Node* iterative_search_(Node * node , int value){
+    static Node* iterative_search_(Node * node , int value){
         Node * temp = node;
         while(temp != nullptr && temp->info != value){
             if(node->info > value){
@@ -124,20 +124,20 @@ private:
         }
         return temp;
     }
-    Node * min_node_(Node * node){
+    static Node * min_node_(Node * node){
         while(node->left != nullptr ){
             node = node->left;
         }
         return node;
 
     }
-    Node * max_node_(Node * node){
+    static Node * max_node_(Node * node){
         while(node->right != nullptr ){
             node = node->right;
         }
         return node;
     }
-    Node  * successor_(Node * node){
+    static Node  * successor_(Node * node){
         if(node->right != nullptr){
             return min_node_(node->right);
         }

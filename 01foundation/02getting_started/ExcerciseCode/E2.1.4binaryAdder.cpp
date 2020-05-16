@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 using namespace std;
-void sum(int *arr1 , int size1 ,int *arr2 ,int *arr3 );
+//void sum(int *arr1 , int size1 ,int *arr2 ,int *arr3 );
 
 vector<int> sum_(vector<int>& a , vector<int> & b){
     int carry = 0 ;
     vector<int>::reverse_iterator itr1;
     vector<int>::reverse_iterator itr2;
     vector<int>nums(a.size()+1);
-    vector<int>::reverse_iterator itr3 = nums.rbegin();
+    auto itr3 = nums.rbegin();
     for(itr1 = a.rbegin() , itr2 = b.rbegin() ; itr1 != a.rend() ; ++itr1,++itr2,++itr3){
         *itr3 = (*itr1 + *itr2 + carry )%2;
         carry =  (*itr1 + *itr2 + carry )/2;
@@ -38,6 +38,7 @@ int main()
 //     cout<<i<<" ";
 
 // C approach
+/*
 void sum(int *arr1 , int size1 ,int *arr2 ,int *arr3 )
 {
     int carry = 0;
@@ -50,3 +51,4 @@ void sum(int *arr1 , int size1 ,int *arr2 ,int *arr3 )
     }
     arr3[i+1] = carry;
 }
+*/

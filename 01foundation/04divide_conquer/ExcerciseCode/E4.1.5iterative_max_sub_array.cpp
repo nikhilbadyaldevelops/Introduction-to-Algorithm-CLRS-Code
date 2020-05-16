@@ -52,6 +52,7 @@ int main(){
 
 
     auto max_subarray_ = max_subarray__(nums); //Main call
+    //auto max_subarray__ = max_subarray(nums); //Main call
 
 
     auto t2 = std::chrono::high_resolution_clock::now();

@@ -3,7 +3,7 @@ using namespace std;
 
 bool binary_search(vector<int>& nums, int key){
     int low = 0 ;
-    int high = nums.size()-1 ;
+    int high = static_cast<int>(nums.size()-1);
     while(high>=low){
         int mid = low+ (high-low)/2;
         if(nums[mid] == key){
@@ -33,7 +33,7 @@ bool recursive_binary_search(vector<int>&nums ,int low, int high,int key){
 }
 int main(){
     vector<int> nums{34,56,78,99,134,157,194,457,746,946};
-    cout<<recursive_binary_search(nums,0,nums.size()-1 , 946);
+    cout<<recursive_binary_search(nums,0,static_cast<int>(nums.size()-1) , 946);
     cout<<"\n Working.";
     return 0;
 }

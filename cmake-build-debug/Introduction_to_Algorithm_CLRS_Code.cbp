@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Introduction_to_Algorithm_CLRS_Code"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Introduction_to_Algorithm_CLRS_Code">
+				<Option output="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Introduction_to_Algorithm_CLRS_Code.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/dequeue"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly/list_with_sentinal"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/singly"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/queue"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/set"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/double_stack"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/12bst/int_tree"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/13red_black"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/14augmenting_structures"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/mingw32"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 Introduction_to_Algorithm_CLRS_Code"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Introduction_to_Algorithm_CLRS_Code/fast">
+				<Option output="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Introduction_to_Algorithm_CLRS_Code.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/dequeue"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly/list_with_sentinal"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/singly"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/queue"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/set"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/double_stack"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/12bst/int_tree"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/13red_black"/>
+					<Add directory="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/14augmenting_structures"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/mingw32"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/../../../../include"/>
+					<Add directory="C:/Program Files (x86)/CodeBlocks/MinGW/bin/../lib/gcc/mingw32/5.1.0/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 Introduction_to_Algorithm_CLRS_Code/fast"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~2/CODEBL~1/MinGW/bin/mingw32-make.exe -f &quot;E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/binaryAdder.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/inversion_count_using_merge_sort.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/linear_search.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/merge_sort.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/recursive_nd_iterative_binary_search.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/recursive_nd_iterative_insertion_sort.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/selection_sort.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/02getting_started/sum_check.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/04divide_conquer/72recursive_max_sub_array.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/04divide_conquer/75sqaure_matrix_multiplication.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/04divide_conquer/77recursive_sqaure_matrix_multiplication.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/04divide_conquer/P4.1.2bruteForce.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/04divide_conquer/P4.1.5iterative_max_sub_array.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/04divide_conquer/modified_max_array_with_mixed_brute_nd_recursive.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/01foundation/04divide_conquer/naive_matrix_multiplication.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/02sorting_nd_order_statics/06heap_sort/max_min_iterative_recursive_heapify.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/dequeue/deque.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/dequeue/deque.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly/list.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly/list.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly/list_with_sentinal/list.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/doubly/list_with_sentinal/list.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/singly/list.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/linked_list/singly/list.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/queue/queue.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/queue/queue.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/queue/using_linked_list.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/queue/using_two_stack.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/set/set.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/set/set.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/double_stack/double_stack.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/double_stack/double_stack.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/stack.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/stack.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/using_linked_list.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/stack/using_two_queue.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/tree/Tree.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/10elementary/tree/left_child_right_sibling/left_child.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/12bst/int_tree/tree.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/12bst/int_tree/treemain.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/13red_black/tree.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/13red_black/tree.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/14augmenting_structures/order_static.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/03data_structure/14augmenting_structures/red_black_tree.h">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/04advanced_design_technique/rot_cut.cpp">
+			<Option target="Introduction_to_Algorithm_CLRS_Code"/>
+		</Unit>
+		<Unit filename="E:/AsusTuff/Code/Data Structure/IAT/Introduction-to-Algorithm-CLRS-Code/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

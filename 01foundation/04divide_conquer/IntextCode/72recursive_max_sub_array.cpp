@@ -1,21 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-tuple<int,int,int> brute_force(vector<int>& nums){
-    int max_profit = INT_MIN;
-    int day_to_buy = -1;
-    int day_to_sell = -1;
-    for(int i = 0 ; i < static_cast<int>(nums.size()) ; ++i){
-        for(int j = i ; j < static_cast<int>(nums.size()); ++j){
-            max_profit = max(max_profit,nums[j]-nums[i]);
-            if(max_profit == nums[j]-nums[i]){
-                day_to_buy=  nums[j];
-                day_to_sell = nums[i];
-            }
-        }
-    }
-    return make_tuple(max_profit,day_to_buy,day_to_sell);
-}
 
 tuple<int,int,int> max_sub_array_crossing_mid(vector<int>& nums,int low, int mid , int high){
     int left_sum = INT_MIN;
@@ -67,7 +52,7 @@ int main(){
     // Added these function to measure run-time of my functions. You can remove these if you want.
     auto t1 = std::chrono::high_resolution_clock::now();
 
-    auto max_subarray = brute_force(nums);  // Main call
+    auto max_subarray = max_sub_array(nums,0,nums.size()-1);  // Main call
     
     auto t2 = std::chrono::high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();

@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int merge(vector<int>&nums , int low , int mid , int high){
+void merge_without_sentinals(vector<int>&nums , int low , int mid , int high){
     int size1 = mid - low +1;
     int size2= high - mid;
     vector<int>left;
@@ -15,23 +15,35 @@ int merge(vector<int>&nums , int low , int mid , int high){
     int i = 0 ;
     int j = 0;
     int start  = low;
-    int inversion = 0 ;
     while(i < size1 && j < size2){
         if(left[i]<right[j]){
             nums[start] = left[i];
             start++;
             i++;
         }else{
-            // To print position of inverted elements.
-            for(int l = i ; l < size1; ++l){
-                cout<<"("<<left[l]<<","<<right[j]<<")"<<endl;
-            }
-            inversion += size1 - i;
             nums[start] = right[j];
             start++;
             j++;
         }
     }
+
+    //You can either use while loop or for next.
+
+
+    // while(i < size1){
+    //     nums[start] = left[i];
+    //     start++;
+    //     i++;
+    // }
+    // while(j < size2){
+    //     nums[start] = right[j];
+    //     start++;
+    //     j++;
+    // }
+
+
+    ///OR
+
 
     if(i == size1){
         for(int c = j ; c< size2 ; ++c){
@@ -45,30 +57,28 @@ int merge(vector<int>&nums , int low , int mid , int high){
             start++;
         }
     }
-    return inversion;
 }
-int inversion_count(vector<int>& nums , int low , int high){
+
+
+void merge_sort(vector<int>&nums ,int low, int high){
     if(high>low){
-        int mid = low + (high-low)/2;
-        int left = inversion_count(nums,low,mid);
-        int right = inversion_count(nums,mid+1,high);
-        int inversion = merge(nums,low,mid,high) + left + right;
-        return inversion;
+        int mid = low+ (high-low)/2;
+        merge_sort(nums,low,mid);
+        merge_sort(nums,mid+1,high);
+        merge_without_sentinals(nums,low,mid,high);
     }
-    return 0 ;
 }
+
+
 int main(){
     vector<int>nums;
     for(int i = 1 ; i <= 20 ; ++i){
         nums.push_back(rand() % 74576);
     }
-    cout<<"Total no. of counts :-"<<inversion_count(nums,0,nums.size()-1)<<endl;
+    merge_sort(nums,0, static_cast<int>(nums.size()-1));
     for(int x : nums){
         cout<<x<<" ";
     }
     cout<<"\nWorking.";
-    return 0 ;
+    return 0;
 }
-
-// Some extra inputs to check code.
-//vector<int>nums{3,2,1};//{8,4,2,1};//{1, 20, 6, 4, 5 };// {69,45,23,6,22,88,-33,-145,457,688,566};

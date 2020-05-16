@@ -2,7 +2,7 @@
 using namespace std;
 
 bool binary_search(vector<int>& nums, int low,int key){
-    int high = nums.size()-1 ;
+    int high = static_cast<int>(nums.size()-1);
     while(high>=low){
         int mid = low+ (high-low)/2;
         if(nums[mid] == key){
@@ -53,7 +53,7 @@ void merge_sort(vector<int>&nums ,int low, int high){
 
 //#Solution 1
 bool sum_check(vector<int>&nums, int sum){
-    merge_sort(nums,0,nums.size()-1);
+    merge_sort(nums,0,static_cast<int>(nums.size()-1));
     int complement ;
     bool result = false;
     for(int i = 0 ; i < static_cast<int>(nums.size()); ++i){
@@ -72,9 +72,9 @@ bool sum_check(vector<int>&nums, int sum){
 
 
 bool sum_check_(vector<int>&nums,int sum){
-    merge_sort(nums,0,nums.size()-1);
+    merge_sort(nums,0,static_cast<int>(nums.size()-1));
     int i = 0 ;
-    int j = nums.size()-1;
+    int j =static_cast<int>(nums.size()-1);
     while(i<j){
         if(nums[i]+nums[j] == sum){
             return true;
@@ -90,7 +90,7 @@ bool sum_check_(vector<int>&nums,int sum){
 // Another solution. Though this is O(n)
 
 //#Solution 3
-bool sum_check__(vector<int> & nums , int sum){
+bool sum_checck__(vector<int> & nums , int sum){
     unordered_set<int> set;
     for(int x : nums ){
         if(set.find(sum-x) != set.end()){
