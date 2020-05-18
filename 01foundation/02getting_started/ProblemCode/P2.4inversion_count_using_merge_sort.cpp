@@ -1,5 +1,26 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
+
+
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-7576,533626);
+
+    for(int i = 1 ; i <= 20000 ; ++i){
+        nums.push_back(dist(rng));
+    }
+}
+void print(vector<int>& nums){
+    for(int x : nums){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
+
 
 int merge(vector<int>&nums , int low , int mid , int high){
     int size1 = mid - low +1;
@@ -15,7 +36,7 @@ int merge(vector<int>&nums , int low , int mid , int high){
     int i = 0 ;
     int j = 0;
     int start  = low;
-    int inversion = 0 ;
+    long long int inversion = 0 ;
     while(i < size1 && j < size2){
         if(left[i]<right[j]){
             nums[start] = left[i];
@@ -23,9 +44,9 @@ int merge(vector<int>&nums , int low , int mid , int high){
             i++;
         }else{
             // To print position of inverted elements.
-            for(int l = i ; l < size1; ++l){
-                cout<<"("<<left[l]<<","<<right[j]<<")"<<endl;
-            }
+            // for(int l = i ; l < size1; ++l){
+            //     cout<<"("<<left[l]<<","<<right[j]<<")"<<endl;
+            // }
             inversion += size1 - i;
             nums[start] = right[j];
             start++;
@@ -59,15 +80,31 @@ int inversion_count(vector<int>& nums , int low , int high){
 }
 int main(){
     vector<int>nums;
-    for(int i = 1 ; i <= 20 ; ++i){
-        nums.push_back((int)rand() % 74576);
-    }
-    cout<<"Total no. of counts :-"<<inversion_count(nums,0, static_cast<int >(nums.size()-1))<<endl;
-    for(int x : nums){
-        cout<<x<<" ";
-    }
+    high_resolution_clock::time_point startTime,endTime;
+
+    //Input numbers
+    input(nums);
+
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
+    cout<<"Total no. of counts : "<<inversion_count(nums,0, static_cast<int >(nums.size()-1))<<endl;
+
+    //Stop the clock
+    endTime = high_resolution_clock::now();
+
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+    //Print Sorted array.
+    //print(nums);
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
-    return 0 ;
+    return 0;
 }
 
 // Some extra inputs to check code.

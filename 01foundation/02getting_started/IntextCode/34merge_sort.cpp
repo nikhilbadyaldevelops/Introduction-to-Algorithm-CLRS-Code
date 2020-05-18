@@ -1,6 +1,25 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 
+
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-7576,533626);
+
+    for(int i = 1 ; i <= 20000 ; ++i){
+        nums.push_back(dist(rng));
+    }
+}
+void print(vector<int>& nums){
+    for(int x : nums){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
 
 void merge_using_sentinals(vector<int>& nums , int low ,int mid , int high){
     int size1 = mid - low +1;
@@ -38,13 +57,29 @@ void merge_sort(vector<int>&nums ,int low, int high){
 }
 int main(){
     vector<int>nums;
-    for(int i = 1 ; i <= 20 ; ++i){
-        nums.push_back(rand() % 74576);
-    }
+    high_resolution_clock::time_point startTime,endTime;
+
+    //Input numbers
+    input(nums);
+
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
     merge_sort(nums,0, static_cast<int>(nums.size()-1));
-    for(int x : nums){
-        cout<<x<<" ";
-    }
+
+    //Stop the clock
+    endTime = high_resolution_clock::now();
+
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+    //Print Sorted array.
+    //print(nums);
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
     return 0;
 }

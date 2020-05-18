@@ -1,7 +1,28 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 
-tuple<int,int,int> max_subarray(vector<int>&nums){
+
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-723519,63347);
+
+    for(int i = 1 ; i <= 10000 ; ++i){
+        nums.push_back(dist(rng));
+    }
+}
+void print(vector<int>& nums){
+    for(int x : nums){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
+
+
+tuple<int,int,int> max_subarray_(vector<int>&nums){
     int max_sum = 0 ;
     int low = -1;
     int high= -1;
@@ -46,21 +67,36 @@ tuple<int,int,int> max_subarray__(vector<int>&nums){
 
 
 int main(){
+    vector<int>nums;
+    high_resolution_clock::time_point startTime,endTime;
 
-    vector<int>nums{13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
-    auto t1 = std::chrono::high_resolution_clock::now();
+    //Input numbers
+    input(nums);
+    //print(nums);
+
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
+    //auto max_subarray = max_subarray_(nums);
+    auto max_subarray = max_subarray__(nums);
+    cout<<"Maximum Profit : "<<(get<0>(max_subarray))<<endl;
+    cout<<"Start : "<<(get<1>(max_subarray))<<endl;
+    cout<<"End : "<<(get<2>(max_subarray))<<endl;
 
 
-    auto max_subarray_ = max_subarray__(nums); //Main call
-    //auto max_subarray__ = max_subarray(nums); //Main call
+    //Stop the clock
+    endTime = high_resolution_clock::now();
 
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
 
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
-    std::cout << duration<<" is the time taken.\n";
-    cout<<(get<0>(max_subarray_))<<endl;
-    cout<<(get<1>(max_subarray_))<<endl;
-    cout<<(get<2>(max_subarray_))<<endl;
+    //Print Sorted array.
+    //print(nums);
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
     return 0;
 }

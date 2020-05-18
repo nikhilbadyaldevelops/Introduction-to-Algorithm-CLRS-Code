@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
+
 
 bool binary_search(vector<int>& nums, int low,int key){
     int high = static_cast<int>(nums.size()-1);
@@ -48,6 +51,18 @@ void merge_sort(vector<int>&nums ,int low, int high){
         merge(nums,low,mid,high);
     }
 }
+
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-9475,396045);
+
+    for(int i = 1 ; i <= 2000 ; ++i){
+        nums.push_back(dist(rng));
+    }
+}
+
 
 //We can make it efficient by using heap sort instead of merge sort to avoid auxillary arrays.
 
@@ -101,14 +116,32 @@ bool sum_checck__(vector<int> & nums , int sum){
     return false;
 }
 int main(){
-    vector<int> nums;
-    for(int i = 1 ; i <= 20 ; ++i){
-        nums.push_back(rand() % 74576);
-    }
-    cout<<sum_check_(nums,-70);
-    for(int x : nums){
-        cout<<x<<" ";
-    }
+    vector<int>nums;
+    high_resolution_clock::time_point startTime,endTime;
+
+    //Input numbers
+    input(nums);
+
+    //Sorting the number
+    merge_sort(nums,0, static_cast<int>(nums.size()-1));
+
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
+    cout<<(sum_check_(nums,-70) ? " Found," : "Not found.");
+
+
+    //Stop the clock
+    endTime = high_resolution_clock::now();
+
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
-    return 0;
+    return 0 ;
 }

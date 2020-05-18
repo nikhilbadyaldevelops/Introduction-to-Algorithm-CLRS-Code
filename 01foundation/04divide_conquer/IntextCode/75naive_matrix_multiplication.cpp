@@ -17,7 +17,8 @@ vector<vector<int>> multiply(vector<vector<int>>&matrix1 , vector<vector<int>>& 
 }
 int main(){
     vector<vector<int>>matrix1 {{1,2,3},{4,5,6},{7,8,9}};
-    vector<vector<int>>matrix2 {{10,11,12},{13,14,15},{16,17,18}};
+    vector<vector<int>>matrix2 {{1,2,3},{4,5,6},{7,8,9}};
+    //vector<vector<int>>matrix2 {{10,11,12},{13,14,15},{16,17,18}};
     auto c = multiply(matrix1,matrix2);
     for(auto x : c){
         for(auto y : x){

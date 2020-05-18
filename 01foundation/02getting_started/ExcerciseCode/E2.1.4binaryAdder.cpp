@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
+
 //void sum(int *arr1 , int size1 ,int *arr2 ,int *arr3 );
 
 vector<int> sum_(vector<int>& a , vector<int> & b){
@@ -16,15 +19,66 @@ vector<int> sum_(vector<int>& a , vector<int> & b){
     return nums;
 }
 
-int main()
-{
-    vector<int>a  {1,0,0,1,0};
-    vector<int>b {0,1,0,1,1};
-    auto c = sum_(a,b);
-    for(auto d: c){
-        cout<<d<<" ";
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(0,1);
+
+    for(int i = 1 ; i <= 20 ; ++i){
+        nums.push_back(dist(rng));
     }
-    return 0;
+}
+void print(vector<int>& nums){
+    for(int x : nums){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
+
+void print_dash(int size){
+    for(int i =0 ; i < 2*size+2 ; ++i){
+        cout << "-";
+    }
+    cout<<endl;
+}
+
+int main(){
+    vector<int>bool_array1;
+    vector<int>bool_array2;
+    high_resolution_clock::time_point startTime,endTime;
+
+    //Input numbers
+    input(bool_array1);
+    input(bool_array2);
+
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
+    auto c = sum_(bool_array1,bool_array2);
+
+    //Stop the clock
+    endTime = high_resolution_clock::now();
+
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+
+    //Print the result
+    cout<<"  ";
+    print(bool_array1);
+    cout<<"  ";
+    print(bool_array2);
+    print_dash(bool_array2.size());
+    print(c);
+
+    //Print Time
+    cout << "\nTime taken: " << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
+    cout<<"\nWorking.";
+    return 0 ;
 }
 
 

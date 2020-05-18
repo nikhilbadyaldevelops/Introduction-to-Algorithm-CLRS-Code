@@ -1,20 +1,44 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
+
+
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-723519,63347);
+
+    for(int i = 1 ; i <= 10000 ; ++i){
+        nums.push_back(dist(rng));
+    }
+}
+void print(vector<int>& nums){
+    for(int x : nums){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
+
 
 tuple<int,int,int> modified_brute_force(vector<int>& nums,int low, int high){
-    int max_profit = INT_MIN;
-    int day_to_buy = -1;
-    int day_to_sell = -1;
-    for(int i = low ; i <=high ; ++i){
-        for(int j = i ; j<= high; ++j){
-            max_profit = max(max_profit,nums[j]-nums[i]);
-            if(max_profit == nums[j]-nums[i]){
-                day_to_buy=  nums[j];
-                day_to_sell = nums[i];
+    int max_sum = INT_MIN;
+    int left = 1 ;
+    int right= 1 ;
+    int current_sum = 0 ;
+    for(int i = low ; i <= high ; ++i){
+        current_sum =0 ;
+        for(int j = i ; j <= high; ++j){
+            current_sum += nums[j];
+            if(current_sum > max_sum ){
+                max_sum = current_sum;
+                left = i;
+                right = j;
             }
         }
     }
-    return make_tuple(max_profit,day_to_buy,day_to_sell);
+    return make_tuple(max_sum,left,right);
 }
 
 tuple<int,int,int> max_sub_array_crossing_mid(vector<int>& nums,int low, int mid , int high){
@@ -64,20 +88,35 @@ tuple<int,int,int> modified_max_sub_array(vector<int>&nums,int low , int high,in
 }
 
 int main(){
-    vector<int>nums{13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
-    int size = nums.size()-1;
-    auto t1 = std::chrono::high_resolution_clock::now();
+    vector<int>nums;
+    high_resolution_clock::time_point startTime,endTime;
+
+    //Input numbers
+    input(nums);
+    //print(nums);
+
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
+    auto max_subarray = modified_max_sub_array(nums,0,nums.size()-1,nums.size());
+    cout<<"Maximum Profit : "<<(get<0>(max_subarray))<<endl;
+    cout<<"Start : "<<(get<1>(max_subarray))<<endl;
+    cout<<"End : "<<(get<2>(max_subarray))<<endl;
 
 
-    auto max_subarray = modified_max_sub_array(nums,0,nums.size()-1,size);
+    //Stop the clock
+    endTime = high_resolution_clock::now();
 
-    
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
-    std::cout << duration<<" is the time taken.\n";
-    cout<<(get<0>(max_subarray))<<endl;
-    cout<<(get<1>(max_subarray))<<endl;
-    cout<<(get<2>(max_subarray))<<endl;
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+    //Print Sorted array.
+    //print(nums);
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
     return 0;
 }

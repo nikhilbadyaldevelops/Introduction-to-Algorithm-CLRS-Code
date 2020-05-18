@@ -1,5 +1,8 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
+
 void recursive_insertion_sort(vector<int>& nums, int size){
     if(size == 0){
         return ;
@@ -13,15 +16,49 @@ void recursive_insertion_sort(vector<int>& nums, int size){
     }
     nums[j+1] = key;
 }
-int main(){
-    vector<int> nums;
-    for(int i = 1 ; i <= 20 ; ++i){
-        nums.push_back(rand() % 74576);
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-9475,396045);
+
+    for(int i = 1 ; i <= 2000 ; ++i){
+        nums.push_back(dist(rng));
     }
-    recursive_insertion_sort(nums,static_cast<int>(nums.size()-1));
+}
+void print(vector<int>& nums){
     for(int x : nums){
         cout<<x<<" ";
     }
+    cout<<endl;
+}
+
+
+int main(){
+    vector<int>nums;
+    high_resolution_clock::time_point startTime,endTime;
+
+    //Input numbers
+    input(nums);
+
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
+    recursive_insertion_sort(nums,static_cast<int>(nums.size()-1));
+
+    //Stop the clock
+    endTime = high_resolution_clock::now();
+
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+    //Print Sorted array.
+    print(nums);
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
     return 0 ;
 }

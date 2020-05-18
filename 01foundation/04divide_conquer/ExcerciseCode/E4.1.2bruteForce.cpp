@@ -1,42 +1,76 @@
-//
-// Created by nikhi on 5/16/2020.
-//
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
+
+
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-723519,63347);
+
+    for(int i = 1 ; i <= 10000 ; ++i){
+        nums.push_back(dist(rng));
+    }
+}
+void print(vector<int>& nums){
+    for(int x : nums){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
+
 
 tuple<int,int,int> brute_force(vector<int>& nums){
-    int max_profit = INT_MIN;
-    int day_to_buy = -1;
-    int day_to_sell = -1;
+    long long int max_sum = INT_MIN;
+    int left = 1 ;
+    int right= 1 ;
+    long long int current_sum = 0 ;
     for(int i = 0 ; i < static_cast<int>(nums.size()) ; ++i){
+        current_sum =0 ;
         for(int j = i ; j < static_cast<int>(nums.size()); ++j){
-            max_profit = max(max_profit,nums[j]-nums[i]);
-            if(max_profit == nums[j]-nums[i]){
-                day_to_buy=  nums[j];
-                day_to_sell = nums[i];
+            current_sum += nums[j];
+            if(current_sum > max_sum ){
+                max_sum = current_sum;
+                left = i;
+                right = j;
             }
         }
     }
-    return make_tuple(max_profit,day_to_buy,day_to_sell);
+    return make_tuple(max_sum,left,right);
 }
 
 int main(){
-    vector<int>nums{13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
+    vector<int>nums;
+    high_resolution_clock::time_point startTime,endTime;
 
-    // Added these function to measure run-time of my functions. You can remove these if you want.
-    auto t1 = std::chrono::high_resolution_clock::now();
+    //Input numbers
+    input(nums);
+    //print(nums);
 
-    auto max_subarray = brute_force(nums);  // Main call
+    //Start the clock
+    startTime = high_resolution_clock::now();
 
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
-    std::cout << duration<<" is the time taken.\n";
-    cout<<(get<0>(max_subarray))<<endl;
-    cout<<(get<1>(max_subarray))<<endl;
-    cout<<(get<2>(max_subarray))<<endl;
+    //Call the function
+    auto max_subarray = brute_force(nums);
+    cout<<"Maximum Profit : "<<(get<0>(max_subarray))<<endl;
+    cout<<"Start : "<<(get<1>(max_subarray))<<endl;
+    cout<<"End : "<<(get<2>(max_subarray))<<endl;
+
+
+    //Stop the clock
+    endTime = high_resolution_clock::now();
+
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+    //Print Sorted array.
+    //print(nums);
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
     return 0;
 }
-
-
-

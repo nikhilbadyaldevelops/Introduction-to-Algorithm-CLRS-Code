@@ -1,11 +1,31 @@
 #include<bits/stdc++.h>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
+
+
+void input(vector<int> & nums){
+    // Random number generator
+    random_device dev;
+    mt19937 rng(dev());
+    uniform_int_distribution<int> dist(-723519,63347);
+
+    for(int i = 1 ; i <= 10000 ; ++i){
+        nums.push_back(dist(rng));
+    }
+}
+void print(vector<int>& nums){
+    for(int x : nums){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
 
 
 tuple<int,int,int> max_sub_array_crossing_mid(vector<int>& nums,int low, int mid , int high){
-    int left_sum = INT_MIN;
-    int right_sum = INT_MIN;
-    int sum = 0 ;
+    long long int left_sum = INT_MIN;
+    long int right_sum = INT_MIN;
+    long long int sum = 0 ;
     int max_left ;
     int max_right ;
     for(int i = mid ;i >= low ; --i ){
@@ -47,25 +67,35 @@ tuple<int,int,int> max_sub_array(vector<int>&nums,int low , int high){
 }
 
 int main(){
-    vector<int>nums{13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
+    vector<int>nums;
+    high_resolution_clock::time_point startTime,endTime;
 
-    // Added these function to measure run-time of my functions. You can remove these if you want.
-    auto t1 = std::chrono::high_resolution_clock::now();
+    //Input numbers
+    input(nums);
+    //print(nums);
 
-    auto max_subarray = max_sub_array(nums,0,nums.size()-1);  // Main call
-    
-    auto t2 = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::microseconds>( t2 - t1 ).count();
-    std::cout << duration<<" is the time taken.\n";
-    cout<<(get<0>(max_subarray))<<endl;
-    cout<<(get<1>(max_subarray))<<endl;
-    cout<<(get<2>(max_subarray))<<endl;
+    //Start the clock
+    startTime = high_resolution_clock::now();
+
+    //Call the function
+    auto max_subarray = max_sub_array(nums,0,nums.size()-1);
+    cout<<"Maximum Profit : "<<(get<0>(max_subarray))<<endl;
+    cout<<"Start : "<<(get<1>(max_subarray))<<endl;
+    cout<<"End : "<<(get<2>(max_subarray))<<endl;
+
+
+    //Stop the clock
+    endTime = high_resolution_clock::now();
+
+    //Calculate the time taken
+    auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
+
+    //Print Sorted array.
+    //print(nums);
+
+    cout << "Time : " << duration << " nanoseconds." <<std::endl;
+    cout << "============================================\n";
+
     cout<<"\nWorking.";
     return 0;
 }
-
-//Some more inputs to check code
-//vector<int>nums{100,113,110,85,105,102,86,63,81,101,94,106,101,79,94,90,97};
-// int mid = 0 + (nums.size()-1)/2;
-// auto c = max_sub_array_crossing_mid(nums,0,mid,nums.size()-1);
-//vector<int>nums{-3,-5,-35,-678,-35,-245};
