@@ -3,26 +3,13 @@
 using namespace std;
 using namespace std::chrono;
 
-void recursive_insertion_sort(vector<int>& nums, int size){
-    if(size == 0){
-        return ;
-    }
-    recursive_insertion_sort(nums,size-1);
-    int key = nums[size];
-    int j =  size-1;
-    while(j>=0 && nums[j]>key){
-        nums[j+1] = nums[j];
-        --j;
-    }
-    nums[j+1] = key;
-}
 void input(vector<int> & nums){
     // Random number generator
     random_device dev;
     mt19937 rng(dev());
-    uniform_int_distribution<int> dist(-9475,396045);
+    uniform_int_distribution<int> dist(-6236316,4363457);
 
-    for(int i = 1 ; i <= 2000 ; ++i){
+    for(int i = 1 ; i <= 5000 ; ++i){
         nums.push_back(dist(rng));
     }
 }
@@ -32,6 +19,8 @@ void print(vector<int>& nums){
     }
     cout<<endl;
 }
+
+
 bool is_sort(vector<int>&nums){
     int n = nums.size();
     for(int i =1 ; i < n ; ++i){
@@ -41,9 +30,23 @@ bool is_sort(vector<int>&nums){
     }
     return true;
 }
-
-
-int main(){
+int bubble_sort(vector<int>& nums){
+    int size = static_cast<int>(nums.size());
+    int pass = 0 ;
+    int i , j ;
+    for(i = 0; i< size; i++) {
+       for(j = i+1; j< size; j++){
+          if(nums[j] < nums[i]) {
+             int temp = nums[i];
+             nums[i] = nums[j];
+             nums[j] = temp;
+          }
+       }
+        pass++;
+    }
+    return pass;
+}
+int main (){
     vector<int>nums;
     high_resolution_clock::time_point startTime,endTime;
 
@@ -54,7 +57,7 @@ int main(){
     startTime = high_resolution_clock::now();
 
     //Call the function
-    recursive_insertion_sort(nums,static_cast<int>(nums.size()-1));
+    cout<<"No. of passes are : "<<bubble_sort(nums)<<endl;
     //Utility to check if algo worked fine.
     //cout<<(is_sort(nums) ? "Array is sorted.\n" : " Unsorted array.\n");
 
@@ -72,4 +75,5 @@ int main(){
 
     cout<<"\nWorking.";
     return 0 ;
+
 }

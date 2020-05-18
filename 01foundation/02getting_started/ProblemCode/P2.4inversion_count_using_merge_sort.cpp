@@ -106,6 +106,3 @@ int main(){
     cout<<"\nWorking.";
     return 0;
 }
-
-// Some extra inputs to check code.
-//vector<int>nums{3,2,1};//{8,4,2,1};//{1, 20, 6, 4, 5 };// {69,45,23,6,22,88,-33,-145,457,688,566};

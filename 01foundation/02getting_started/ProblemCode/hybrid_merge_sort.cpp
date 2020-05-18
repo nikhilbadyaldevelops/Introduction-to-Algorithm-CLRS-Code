@@ -3,6 +3,8 @@
 using namespace std;
 using namespace std::chrono;
 
+#define  INSERTION_THRESHOLD 20
+#define  SELECTION_THRESHOLD 15
 
 void input(vector<int> & nums){
     // Random number generator
@@ -30,6 +32,34 @@ bool is_sort(vector<int>&nums){
     }
     return true;
 }
+
+void selection_sort(vector<int>& nums ){
+    for(int i = 0 ; i < static_cast<int>(nums.size()-1) ; ++i){
+        int smallest_pos = i ;
+        int j = i +1;
+        for(; j <  static_cast<int>(nums.size()); ++j){
+            if(nums[j] < nums[smallest_pos]){
+                smallest_pos = j;
+            }
+        }
+        if(i != smallest_pos){
+            iter_swap(nums.begin()+i,nums.begin()+smallest_pos);
+        }
+    }
+}
+
+void insertion_sort(vector<int> & nums){
+    for(int i = 1 ; i < static_cast<int>(nums.size()); ++i){
+        int key = nums[i];
+        int j = i -1;
+        while(j>= 0 && nums[j]> key){
+            nums[j+1] = nums[j];
+            --j;
+        }
+        nums[j+1] = key;
+    }
+}
+
 
 void merge_using_sentinals(vector<int>& nums , int low ,int mid , int high){
     int size1 = mid - low +1;
@@ -64,6 +94,34 @@ void merge_sort(vector<int>&nums ,int low, int high){
         merge_using_sentinals(nums,low,mid,high);
     }
 }
+
+void selection_merge_sort(vector<int>&nums ,int low, int high){
+    if(low>=high){
+        return ;
+    }else if(high-low < SELECTION_THRESHOLD){
+        selection_sort(nums);
+    }else{
+        int mid = low+ (high-low)/2;
+        merge_sort(nums,low,mid);
+        merge_sort(nums,mid+1,high);
+        merge_using_sentinals(nums,low,mid,high);
+    }
+}
+
+void insertion_merge_sort(vector<int>&nums ,int low, int high){
+    if(low>=high){
+        return ;
+    }else if(high-low < INSERTION_THRESHOLD){
+        insertion_sort(nums);
+    }else  {
+        int mid = low+ (high-low)/2;
+        merge_sort(nums,low,mid);
+        merge_sort(nums,mid+1,high);
+        merge_using_sentinals(nums,low,mid,high);
+    }
+}
+
+
 int main(){
     vector<int>nums;
     high_resolution_clock::time_point startTime,endTime;
@@ -75,7 +133,10 @@ int main(){
     startTime = high_resolution_clock::now();
 
     //Call the function
-    merge_sort(nums,0, static_cast<int>(nums.size()-1));
+    //merge_sort(nums,0, static_cast<int>(nums.size()-1));
+    //insertion_merge_sort(nums,0, static_cast<int>(nums.size()-1));
+    //selection_merge_sort(nums,0, static_cast<int>(nums.size()-1));
+
     //Utility to check if algo worked fine.
     //cout<<(is_sort(nums) ? "Array is sorted.\n" : " Unsorted array.\n");
 
@@ -94,7 +155,3 @@ int main(){
     cout<<"\nWorking.";
     return 0;
 }
-
-// Some extra inputs to check code.
-//vector<int>nums{3,2,1};//{8,4,2,1};//{1, 20, 6, 4, 5 };// {69,45,23,6,22,88,-33,-145,457,688,566};
-//vector<int>nums {69,45,23,6,22,88,-33,-145,457,688,566};

@@ -18,7 +18,37 @@ void merge_without_sentinals(vector<int>&nums , int low , int mid , int high){
     int i = 0 ;
     int j = 0;
     int start  = low;
-    while(i < size1 && j < size2){
+
+    //You can either use
+
+    //1. for loop  (A)
+
+    // OR
+
+    //2.while loop  + b1 OR while loop + b2
+
+
+
+    //A
+
+
+    for(int k = start ; k <= high ; ++k){
+        if((i < size1 ) &&  (j >= size2 || left[i] <= right[j])){
+            nums[k] = left[i];
+            i++;
+        }else{
+            nums[k] = right[j];
+            j++;
+        }
+    }
+
+
+
+
+
+    //B
+
+    /*while(i < size1 && j < size2){
         if(left[i]<right[j]){
             nums[start] = left[i];
             start++;
@@ -28,9 +58,14 @@ void merge_without_sentinals(vector<int>&nums , int low , int mid , int high){
             start++;
             j++;
         }
-    }
+    }*/
 
-    //You can either use while loop or for next.
+
+
+    //You can either use while loop or for with above while loop
+
+
+    //b1
 
 
     // while(i < size1){
@@ -45,8 +80,8 @@ void merge_without_sentinals(vector<int>&nums , int low , int mid , int high){
     // }
 
 
-    ///OR
 
+    //b2
 
     if(i == size1){
         for(int c = j ; c< size2 ; ++c){
@@ -78,7 +113,7 @@ void input(vector<int> & nums){
     mt19937 rng(dev());
     uniform_int_distribution<int> dist(-9475,396045);
 
-    for(int i = 1 ; i <= 2000 ; ++i){
+    for(int i = 1 ; i <= 20 ; ++i){
         nums.push_back(dist(rng));
     }
 }
@@ -87,6 +122,16 @@ void print(vector<int>& nums){
         cout<<x<<" ";
     }
     cout<<endl;
+}
+
+bool is_sort(vector<int>&nums){
+    int n = nums.size();
+    for(int i =1 ; i < n ; ++i){
+        if(nums[i]<nums[i-1]){
+            return false;
+        }
+    }
+    return true;
 }
 
 int main(){
@@ -101,6 +146,8 @@ int main(){
 
     //Call the function
     merge_sort(nums,0, static_cast<int>(nums.size()-1));
+    //Utility to check if algo worked fine.
+    //cout<<(is_sort(nums) ? "Array is sorted.\n" : " Unsorted array.\n");
 
     //Stop the clock
     endTime = high_resolution_clock::now();

@@ -19,13 +19,27 @@ vector<int> sum_(vector<int>& a , vector<int> & b){
     return nums;
 }
 
+//Another way 
+
+vector<int> sum__(vector<int>& a , vector<int> & b){
+    int carry = 0 ;
+    int size = a.size();
+    vector<int>nums(size+1);
+    auto itr3 = nums.rbegin();
+    for(int i =0  ; i < size ; ++i ){
+        carry = a[i] ^ b[i] ^ carry;
+        nums[i] = (a[i] & b[i])  ^ (a[i] & carry) ^ (b[i] & carry);
+    }
+    return nums;
+}
+
 void input(vector<int> & nums){
     // Random number generator
     random_device dev;
     mt19937 rng(dev());
     uniform_int_distribution<int> dist(0,1);
 
-    for(int i = 1 ; i <= 20 ; ++i){
+    for(int i = 1 ; i <= 200000 ; ++i){
         nums.push_back(dist(rng));
     }
 }
@@ -57,6 +71,7 @@ int main(){
 
     //Call the function
     auto c = sum_(bool_array1,bool_array2);
+    auto d = sum__(bool_array1,bool_array2);
 
     //Stop the clock
     endTime = high_resolution_clock::now();
@@ -66,15 +81,27 @@ int main(){
 
 
     //Print the result
-    cout<<"  ";
-    print(bool_array1);
-    cout<<"  ";
-    print(bool_array2);
-    print_dash(bool_array2.size());
-    print(c);
+    // cout<<"  ";
+    // print(bool_array1);
+    // cout<<"  ";
+    // print(bool_array2);
+    // print_dash(bool_array2.size());
+    // print(c);
+    //
+    // cout<<"     2nd solution.\n";;
+    // cout<<"  ";
+    // print(bool_array1);
+    // cout<<"  ";
+    // print(bool_array2);
+    // print_dash(bool_array2.size());
+    // print(d);
+
+
+    // To check if both solution give same result.
+    cout<<((c==d) ? "Both algo are correct." : "One is wrong.");
 
     //Print Time
-    cout << "\nTime taken: " << " nanoseconds." <<std::endl;
+    cout << "\nTime taken: " << duration<< " nanoseconds." <<std::endl;
     cout << "============================================\n";
 
     cout<<"\nWorking.";

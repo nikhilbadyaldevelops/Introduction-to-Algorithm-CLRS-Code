@@ -3,26 +3,13 @@
 using namespace std;
 using namespace std::chrono;
 
-void recursive_insertion_sort(vector<int>& nums, int size){
-    if(size == 0){
-        return ;
-    }
-    recursive_insertion_sort(nums,size-1);
-    int key = nums[size];
-    int j =  size-1;
-    while(j>=0 && nums[j]>key){
-        nums[j+1] = nums[j];
-        --j;
-    }
-    nums[j+1] = key;
-}
 void input(vector<int> & nums){
     // Random number generator
     random_device dev;
     mt19937 rng(dev());
-    uniform_int_distribution<int> dist(-9475,396045);
+    uniform_int_distribution<int> dist(3,10);
 
-    for(int i = 1 ; i <= 2000 ; ++i){
+    for(int i = 1 ; i <= 5 ; ++i){
         nums.push_back(dist(rng));
     }
 }
@@ -32,31 +19,54 @@ void print(vector<int>& nums){
     }
     cout<<endl;
 }
-bool is_sort(vector<int>&nums){
+
+long  horner_rule(int x , vector<int>& nums){
     int n = nums.size();
-    for(int i =1 ; i < n ; ++i){
-        if(nums[i]<nums[i-1]){
-            return false;
-        }
+    long y = 0 ;
+    for(int i = n-1 ; i >= 0 ; --i){
+        y = nums[i] +  x*y ;
     }
-    return true;
+    return y ;
 }
 
+long naive1(int x , vector<int> & nums){
+    long y = 0 ;
+    int n = nums.size() ;
+    for(int i = 0 ; i < n ; ++i){
+        int k =1 ;
+        for(int j = 0 ; j< i  ; ++j){
+            k *= x;
+        }
+        y += nums[i] * k ;
+    }
+    return y;
+}
 
+long naive2(int x , vector<int>&nums){
+    long y = 0 ;
+    int k = 1;
+    int n = nums.size() ;
+    for(int i = 0 ; i < n ;++i){
+        y += nums[i] * k;
+        k = k*x;
+    }
+    return y;
+}
 int main(){
     vector<int>nums;
     high_resolution_clock::time_point startTime,endTime;
 
     //Input numbers
     input(nums);
+    //print(nums);
 
     //Start the clock
     startTime = high_resolution_clock::now();
 
     //Call the function
-    recursive_insertion_sort(nums,static_cast<int>(nums.size()-1));
-    //Utility to check if algo worked fine.
-    //cout<<(is_sort(nums) ? "Array is sorted.\n" : " Unsorted array.\n");
+    cout<<"Value of polynomial  : "<<horner_rule(2,nums)<<endl;
+    cout<<"Value of polynomial  : "<<naive1(2,nums)<<endl;
+    cout<<"Value of polynomial  : "<<naive2(2,nums)<<endl;
 
     //Stop the clock
     endTime = high_resolution_clock::now();
@@ -65,11 +75,11 @@ int main(){
     auto duration = duration_cast<nanoseconds>(endTime - startTime).count();
 
     //Print Sorted array.
-    print(nums);
+    //print(nums);
 
     cout << "Time : " << duration << " nanoseconds." <<std::endl;
     cout << "============================================\n";
 
     cout<<"\nWorking.";
-    return 0 ;
+    return 0;
 }

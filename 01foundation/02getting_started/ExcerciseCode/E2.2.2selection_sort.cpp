@@ -17,6 +17,7 @@ void selection_sort(vector<int>& nums ){
         }
     }
 }
+
 void input(vector<int> & nums){
     // Random number generator
     random_device dev;
@@ -33,6 +34,16 @@ void print(vector<int>& nums){
     }
     cout<<endl;
 }
+bool is_sort(vector<int>&nums){
+    int n = nums.size();
+    for(int i =1 ; i < n ; ++i){
+        if(nums[i]<nums[i-1]){
+            return false;
+        }
+    }
+    return true;
+}
+
 
 int main(){
     vector<int>nums;
@@ -46,6 +57,8 @@ int main(){
 
     //Call the function
     selection_sort(nums);
+    //Utility to check if algo worked fine.
+    //cout<<(is_sort(nums) ? "Array is sorted.\n" : " Unsorted array.\n");
 
     //Stop the clock
     endTime = high_resolution_clock::now();
